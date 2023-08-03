@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <form action="index.php?c=producto&m=nuevo" method="post">
+  <form action="index.php?c=producto&m=nuevo" method="get">
     <input type="text" placeholder="Codigo" name="codigo">
     <textarea name="descripcion" cols="30" rows="10">Describe el producto...</textarea>
     <input type="number" step=".01" name="precio">
