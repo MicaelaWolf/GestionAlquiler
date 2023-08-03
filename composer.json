@@ -1,0 +1,11 @@
+{
+    "name": "mverawolf/mvc",
+    "description": "mvc",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Micaela\\App\\": "src/"
+        }
+    },
+    "require": {}
+}
