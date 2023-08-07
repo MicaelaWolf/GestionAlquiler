@@ -7,18 +7,18 @@ require_once 'src/models/Persona.php';
 
 class Alquiler {
   private $id;
-  private $duracionMeses;
-  private $costo;
   private $persona;
   private $casa;
-
-  public function __construct($id, $duracionMeses, $costo, $persona, $casa)
+  private $duracionMeses;
+  private $costo;
+  public function __construct($id,$persona, $casa, $duracionMeses, $costo)
   {
     $this->id = $id;
-    $this->duracionMeses = $duracionMeses;
-    $this->costo = $costo;
     $this->persona = $persona;
     $this->casa = $casa;
+    $this->duracionMeses = $duracionMeses;
+    $this->costo = $costo;
+
   }
 
   public static function alquilar(Persona $persona, Casa $casa, $duracionMeses, $costo){
@@ -55,5 +55,15 @@ class Alquiler {
   public function getCasa()
   {
     return $this->casa;
+  }
+
+  public function getId()
+  {
+    return $this->id;
+  }
+
+  public function getDuracionMeses()
+  {
+    return $this->duracionMeses;
   }
 }

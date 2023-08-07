@@ -9,7 +9,24 @@
 </head>
 
 <body>
-
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Persona</th>
+      <th>Casa</th>
+      <th>Precio</th>
+      <th>Duracion en Meses</th>
+    </tr>
+    <tr>
+      <?php for ($i = 0; $i < count($this->datos); $i++) {; ?>
+      <td><?= $this->datos[$i]->getId(); ?></td>
+      <td><?= $this->datos[$i]->getPersona(); ?></td>
+      <td><?= $this->datos[$i]->getCasa(); ?></td>
+      <td><?= $this->datos[$i]->getCosto(); ?></td>
+      <td><?= $this->datos[$i]->getDuracionMeses(); ?></td>
+    </tr>
+    <?php }; ?>
+  </table>
   <script src="public/js/alquiler/listar.js"></script>
 </body>
 
