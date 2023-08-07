@@ -1,6 +1,6 @@
 <?php
 
-class Casa
+class Persona
 {
   private $id;
   private $nombre;
