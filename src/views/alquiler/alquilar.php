@@ -9,7 +9,13 @@
 </head>
 
 <body>
-
+  <form action="index.php?c=alquiler&m=alquilar" method="post">
+    <input type="text" name="Persona" id="persona">
+    <input type="text" name="Casa" id="casa">
+    <input type="number" name="Duración en Meses" id="tiempo">
+    <button type="reset">Borrar</button>
+    <input type="submit" value="Enviar">
+  </form>
   <script src="public/js/alquiler/alquilar.js"></script>
 </body>
 
