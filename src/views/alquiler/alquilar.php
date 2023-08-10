@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <form action="index.php?c=alquiler&m=alquilar" method="post">
+  <form action="alquiler.php" method="post">
     <input type="text" name="Cedula" id="persona_id">
     <input type=" text" name="Persona" id="personaCliente">
     <input type="text" name="Calle" id="casaAlquiler">
