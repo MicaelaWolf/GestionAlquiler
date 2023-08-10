@@ -11,7 +11,7 @@ class Alquiler {
   private $casa;
   private $duracionMeses;
   private $costo;
-  public function __construct($id,$persona, $casa, $duracionMeses, $costo)
+  public function __construct($id, $persona, $casa, $duracionMeses, $costo)
   {
     $this->id = $id;
     $this->persona = $persona;
@@ -22,7 +22,9 @@ class Alquiler {
   }
 
   public static function alquilar(Persona $persona, Casa $casa, $duracionMeses, $costo){
-    
+    $costo=$costo*$duracionMeses;
+    $mensaje= "La {$persona->getNombre()} ha alquilado la casa en {$casa->getCalle()} por {$duracionMeses} meses, a un costo de {$costo} al mes.";
+    return $mensaje;
   }
 
   public static function listar() {

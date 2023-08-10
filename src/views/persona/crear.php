@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <form action="" method="post">
+  <form action="index.php?c=persona&m=nuevo" method="post">
     <input type="number" placeholder="CI" name="ci">
     <input type="text" placeholder="Nombre" name="nombre">
     <button type="reset">Borrar</button>

@@ -1,6 +1,7 @@
 <?php
 
 use Micaela\App\Libs\Controlador;
+require_once 'src/models/Alquiler.php';
 
 class Alquiler_Controller extends Controlador {
   public $dato;
@@ -15,7 +16,9 @@ class Alquiler_Controller extends Controlador {
     $this->cargarVista('alquiler/listar');
   }
 
-  public function alquilar(){
-    $this->cargarVista('alquiler/alquilar');
+  public function alquilar($id, $persona, $casa, $duracionMeses, $costo){
+    $alquilerModel= new Alquiler($id, $persona, $casa, $duracionMeses, $costo);
+    $mensajeAlquilar = $alquilerModel->alquilar($id, $persona, $casa, $duracionMeses, $costo);
+    return $mensajeAlquilar;
   }
 }
