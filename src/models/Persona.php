@@ -1,16 +1,18 @@
 <?php
 
+namespace Micaela\App\models;
+
 class Persona
 {
   private $id;
   private $nombre;
   private $alquiler = [];
 
-  public function __construct($id, $nombre, array $alquiler)
+  public function __construct($id, $nombre, array $alquiler = [])
   {
     $this->id = $id;
     $this->nombre = $nombre;
-    $this->alquiler = $alquiler; 
+    $this->alquiler = $alquiler;
   }
   /**
    * Get the value of calle

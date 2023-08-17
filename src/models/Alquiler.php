@@ -58,7 +58,11 @@ INNER JOIN casa c ON a.casa_id = c.id';
       $alquiler = [];
       while ($row = $query->fetch()) {
         //casa 
-        //$casa = 
+        $casa = new Casa(
+          $row['idC'],
+          $row['calle'],
+          $row['numero']
+        );
         ///persona
         $alquiler = new Alquiler(
           $row['id'],

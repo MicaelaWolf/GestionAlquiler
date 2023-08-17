@@ -17,6 +17,7 @@ class Casa
     $this->numero = $numero;
     $this->alquiler = $alquiler;
   }
+
   /**
    * Get the value of calle
    */
