@@ -3,7 +3,7 @@
 use Micaela\App\Libs\Controlador;
 use Micaela\App\models\Alquiler;
 
-require_once 'src/models/Alquiler.php';
+
 
 class Alquiler_Controller extends Controlador
 {
@@ -21,10 +21,27 @@ class Alquiler_Controller extends Controlador
     $this->cargarVista('alquiler/listar', $lista);
   }
 
-  public function alquilar($id, $persona, $casa, $duracionMeses, $costo)
+  public function formAlquilar()
   {
+
+    //deberia desplegar un formulario de alquilar
     //$alquilerModel= new Alquiler($id, $persona, $casa, $duracionMeses, $costo);
     //$mensajeAlquilar = $alquilerModel->alquilar($id, $persona, $casa, $duracionMeses, $costo);
     //return $mensajeAlquilar;
+  }
+  public function alquilar()
+  {
+    try {
+      //$alquilerModel= new Alquiler($id, $persona, $casa, $duracionMeses, $costo);
+      //$mensajeAlquilar = $alquilerModel->alquilar($id, $persona, $casa, $duracionMeses, $costo);
+      //return $mensajeAlquilar;
+      //code...
+    } catch (\Throwable $th) {
+      //throw $th;
+      //mostrar vista de error al alquilar
+    }
+
+    //deberia desplegar un metodo de alquilar
+
   }
 }
