@@ -41,6 +41,7 @@ class Alquiler
   public static function listar()
   {
     $pdo = Singleton::getInstancia()->getPdo();
+    $alquileres = [];
     try {
       /* consulta de listado de alquileres */
       $sql = 'SELECT c.id as idC, 
@@ -48,14 +49,13 @@ class Alquiler
       c.numero, 
       p.id as idP, 
       p.nombre, 
-      a.id as isA, 
-      a.costo, 
+      a.id as idA, 
+      a.costo,
       a.duracionMeses as duracion 
       FROM alquiler a
 INNER JOIN persona p ON a.persona_id = p.id
 INNER JOIN casa c ON a.casa_id = c.id';
       $query = $pdo->query($sql);
-      $alquiler = [];
       while ($row = $query->fetch()) {
         //casa 
         $casa = new Casa(
@@ -64,16 +64,17 @@ INNER JOIN casa c ON a.casa_id = c.id';
           $row['numero']
         );
         ///persona
+        $persona = new Persona($row['idP'], $row['nombre']);
         $alquiler = new Alquiler(
-          $row['id'],
-          $row['persona_id'],
-          $row['casa_id'],
-          $row['duracionMeses'],
+          $row['idA'],
+          $persona,
+          $casa,
+          $row['duracion'],
           $row['costo']
         );
-        $alquiler[] = $alquiler;
+        $alquileres[] = $alquiler;
       }
-      return $alquiler;
+      return $alquileres;
     } catch (PDOException $e) {
       var_dump($e);
     } finally {
