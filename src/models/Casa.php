@@ -1,5 +1,7 @@
 <?php
 
+namespace Micaela\App\models;
+
 class Casa
 {
   private $id;
@@ -7,7 +9,8 @@ class Casa
   private $numero;
   private $alquiler = [];
 
-  public function __construct( $id, $calle, $numero, array $alquiler)
+  //hacer alquiquier un parametro opcionals
+  public function __construct($id, $calle, $numero, array $alquiler = [])
   {
     $this->id = $id;
     $this->calle = $calle;
@@ -17,6 +20,8 @@ class Casa
   /**
    * Get the value of calle
    */
+
+
   public function getCalle()
   {
     return $this->calle;
