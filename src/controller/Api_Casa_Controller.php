@@ -23,6 +23,7 @@ class Api_Casa_Controller extends Controlador
 
     } catch (\Throwable $th) {
       $res->codigo = 500;
+      $this->cargarVista('api/res', $res);
     }
   }
 
