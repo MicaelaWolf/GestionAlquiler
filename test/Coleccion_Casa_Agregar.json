@@ -1,0 +1,44 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "GestionAlquiler",
+    "dateExported": "2023-08-24T22:04:09.210Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "fbda0517-9e23-4429-a04d-cfa635142f4b",
+            "colId": "ce9004c8-b9c2-4285-8e6a-d6a13b05b821",
+            "containerId": "",
+            "name": "localhost",
+            "url": "http://localhost/GestionAlquiler/index.php?c=api_Casa&m=agregar",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-24T22:03:52.278Z",
+            "modified": "2023-08-24T22:03:52.278Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [
+                {
+                    "name": "c",
+                    "value": "api_Casa",
+                    "isPath": false
+                },
+                {
+                    "name": "m",
+                    "value": "agregar",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"calle\":\"santa\",\n  \"numero\":25\n}\n  \n  ",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
