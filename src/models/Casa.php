@@ -2,10 +2,12 @@
 
 namespace Micaela\App\models;
 
+use JsonSerializable;
 use PDOException;
 use Micaela\App\Libs\Singleton;
 
-class Casa {
+class Casa implements JsonSerializable
+{
   private $id;
   private $calle;
   private $numero;
@@ -72,5 +74,14 @@ class Casa {
   public function getId()
   {
     return $this->id;
+  }
+
+  public function jsonSerialize()
+  {
+    return [
+      "id"=>intval($this->id),
+      "calle"=>$this->calle,
+      "numero"=>$this->numero
+    ];
   }
 }
