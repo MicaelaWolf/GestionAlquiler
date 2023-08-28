@@ -1,6 +1,7 @@
 <?php
 
 use Micaela\App\Libs\Controlador;
+use Micaela\App\models\Persona;
 
 class Persona_Controller extends Controlador
 {
@@ -13,8 +14,10 @@ class Persona_Controller extends Controlador
 
   public function listar()
   {
-    $this->cargarVista('persona/listar');
+    $lista = Persona::listar();
+    $this->cargarVista('persona/listar', $lista);
   }
+  
   public function crear()
   {
     $this->cargarVista('persona/crear');
