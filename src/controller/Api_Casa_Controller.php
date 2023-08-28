@@ -6,7 +6,7 @@ use Micaela\App\models\Casa;
 class Api_Casa_Controller extends Controlador
 {
 
-  public function agregar()
+  public function crear()
   {
     $res = new stdClass();
     $res->codigo = 200;
@@ -17,10 +17,14 @@ class Api_Casa_Controller extends Controlador
       $json = json_decode($datos);
       $calle = $json->calle;
       $numero = $json->numero;
-
+      $casa = new Casa(null, $calle, $numero);
+      $id = intval($casa->crear());
+      $res = new stdClass();
+      $res->codigo = 201;
+      $res->respuesta = [
+        'id' => $id
+      ];
       $this->cargarVista('api/res', $res);
-      //$agregar = Casa::crear();
-
     } catch (\Throwable $th) {
       $res->codigo = 500;
       $this->cargarVista('api/res', $res);
