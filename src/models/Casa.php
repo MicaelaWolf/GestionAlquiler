@@ -51,6 +51,31 @@ class Casa implements JsonSerializable
       $pdo = null;
     }
   }
+
+  public function crear(){
+    $pdo = null;
+    $query = null;
+    $pdo = Singleton::getInstancia()->getPdo();
+    $id = -1;
+    try {
+      $query = $pdo->prepare('INSERT INTO  casa
+      (id,
+      calle,
+      numero)
+VALUES(:id,:calle,:numero)');
+      $query->bindParam(':id', $this->id);
+      $query->bindParam(':calle', $this->calle);
+      $query->bindParam(':numero', $this->numero);
+      if ($query->execute()) {
+        $id = $pdo->lastInsertId();
+      }
+      return $id;
+    } catch (PDOException $th) {
+      //throw $th;
+    } finally {
+      $pdo = null;
+    }
+  }
   
   /**
    * Get the value of calle
