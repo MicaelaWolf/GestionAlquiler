@@ -11,7 +11,7 @@
   <a href="index.php?c=casa&m=crear">Crear Nueva Casa</a>
   <a href="index.php?c=persona&m=crear">Crear Nueva Persona</a>
   <a href="index.php?c=alquiler&m=listar">Listar Alquileres</a>
-  <a href="index.php?c=alquiler&m=alquilar">Alquilar una Casa</a>
+  <a href="index.php?c=alquiler&m=formAlquilar">Alquilar una Casa</a>
 </body>
 
 </html>
