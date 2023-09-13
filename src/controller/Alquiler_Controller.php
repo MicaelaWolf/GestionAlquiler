@@ -2,6 +2,7 @@
 
 use Micaela\App\Libs\Controlador;
 use Micaela\App\models\Alquiler;
+use Micaela\App\models\Casa;
 
 class Alquiler_Controller extends Controlador
 {
@@ -21,8 +22,9 @@ class Alquiler_Controller extends Controlador
 
   public function formAlquilar()
   {
-    $lista = Alquiler::listar();
-    $this->cargarVista('alquiler/formAlquilar', $lista);
+    $data = new stdClass();
+    $data->casas = Casa::listar();
+    $this->cargarVista('alquiler/formAlquilar', $data);
     //deberia desplegar un formulario de alquilar
     //$alquilerModel= new Alquiler($id, $persona, $casa, $duracionMeses, $costo);
     //$mensajeAlquilar = $alquilerModel->alquilar($id, $persona, $casa, $duracionMeses, $costo);

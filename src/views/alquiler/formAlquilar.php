@@ -11,12 +11,27 @@
 <body>
   <form action="index.php?c=alquilar&m=alquilar" method="post">
 
+    <label for="">persona</label>
     <input type="text" name="Cedula" id="persona_id">
-
     <input type="text" name="Persona" id="personaCliente">
 
+    <label for="">casa</label>
+    <pre>
+    <?php
+    // var_dump($this->datos->casas); 
+    ?>
+</pre>
+    /* hacer esto mismo para persona
+    <select name="casaId" id="">
+      <?php foreach ($this->datos->casas as $casa) {
+      ?><option value="<?= $casa->getId(); ?>">
+          <?= $casa->getNumero() . $casa->getCalle() ?>
+        </option>
+      <?php }; ?>
+    </select>
     <input type="text" name="Calle" id="casaAlquiler">
     <input type="number" name="Numero" id="numero">
+
     <input type="number" name="Duración en Meses" id="duracion">
     <input type="number" name="Costo" id="costoAlquiler">
     <button type="reset">Borrar</button>
